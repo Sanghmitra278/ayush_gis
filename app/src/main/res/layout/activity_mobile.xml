@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/green_grad"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/aayush_logo">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="Please provide your Contact Number"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+    <!-- Mobile Number -->
+    <RelativeLayout
+        android:id="@+id/rl_mob_no"
+        android:layout_margin="20dp"
+        android:layout_below="@id/tv_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_rounded_input_field" >
+        </View>
+
+        <TextView
+            android:id="@+id/text_dummy_hint_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="Enter your Mobile No."
+            android:textSize="16sp"
+            android:background="@android:color/white"
+            android:visibility="invisible">
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Enter your Mobile No."
+            android:textColorHint="@android:color/black"
+            app:hintTextAppearance="@style/HintTextStyle">
+
+            <EditText
+                android:id="@+id/edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:backgroundTint="@android:color/transparent"
+                android:inputType="number"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonContinue"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="match_parent"
+        android:layout_margin="18dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_mob_no"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="Continue"
+        android:textColor="#cdd8f1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_below="@+id/buttonContinue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Enter the Verification Code"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+            android:textColor="@color/black" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="invisible"
+            android:outlineAmbientShadowColor="@color/colorAccent"
+            android:layout_below="@id/textView"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/TextCode"
+            android:layout_width="192dp"
+            android:layout_height="42dp"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:digits="0123456789"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:hint="Enter verification code"
+            android:inputType="phone"
+            android:maxLength="10" />
+
+        <Button
+            android:id="@+id/btn_verify"
+            style="@style/AppTheme.RoundedCornerMaterialButton"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TextCode"
+            android:layout_marginTop="11dp"
+            android:text="VERIFY OTP"
+            android:textColor="#cdd8f1"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="385dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/btn_verify"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_mob_no"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Mobile No."
+                android:textSize="18sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text=":"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/mob_no"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:textSize="18sp">
+            </TextView>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

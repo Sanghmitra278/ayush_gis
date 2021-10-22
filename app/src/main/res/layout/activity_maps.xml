@@ -1,0 +1,1913 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/mScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".MapsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/black"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="  AYUSH-GIS "
+            android:textColor="#ffffff"
+            android:textSize="24sp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/purple"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:text="  LOCATION INFORMATION "
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/save_dis"
+                android:layout_weight="1">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/save_office_type"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/save_block"
+                android:layout_weight="1"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/save_vidhansabha"
+                android:layout_weight="1">
+            </TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="District"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </TextView>
+
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spin_district"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/district"
+                tools:listitem="">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Ayush"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </TextView>
+
+            <Spinner
+                android:id="@+id/spin_ayush_type"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/ayush_type"
+                tools:listitem="">
+            </Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/layout_office_type"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Office Type"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </TextView>
+
+
+            <Spinner
+                android:id="@+id/spin_office_type"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/office_type"
+                tools:listitem="">
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+<!--            Regional Ayurvedic &amp; Unani Office-->
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Office Name"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/office_name"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/office_name"
+                tools:listitem="">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Office Name"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_office_name"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5dp"
+                android:hint="Enter Office Name"
+                android:text=""
+                android:inputType="text"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </EditText>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Office Address"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_office_address"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="5dp"
+                android:hint="Enter Office Address"
+                android:inputType="text"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </EditText>
+        </LinearLayout>
+
+<!--       -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Block/Tehsil"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spin_block"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/block"
+                tools:listitem="">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Vidhansabha"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spin_vidhansabha"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/vidhansabha"
+                tools:listitem="">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Landmark"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_landmark"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Landmark"
+                android:inputType="text"
+                android:maxLength="200"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </EditText>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Nearest Police Station"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_police_station"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Police Station Name"
+                android:inputType="text"
+                android:maxLength="200"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </EditText>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Pincode"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_pincode"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Pincode"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="SELECT OFFICE LOCATION"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:padding="5dp"
+            android:background="@drawable/bordor4"
+            android:layout_height="310dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.example.ayush_gis.WorkaroundMapFragment"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                tools:context=".MapsActivity" />
+        </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*Kindly touch on the map to capture location other than your current location"
+                        android:textSize="15dp"
+                        android:padding="10dp"
+                        android:textColor="@color/gray">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/accu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GPS Accuracy(In Meters)"
+
+                        android:layout_weight="1"
+                        android:textStyle="bold">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textStyle="bold">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/get_accu"
+                        android:layout_weight="1">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Latitude"
+                        android:id="@+id/lat"
+                        android:layout_weight="1"
+                        android:textStyle="bold">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textStyle="bold">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/get_lat"
+                        android:layout_weight="1">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="2">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Longitude"
+                        android:id="@+id/lon"
+                        android:layout_weight="1"
+                        android:textStyle="bold">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textStyle="bold">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/get_lon"
+                        android:layout_weight="1">
+                    </TextView>
+                </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/purple"
+            android:gravity="center_vertical"
+            android:text="  EMPLOYEE DETAILS "
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Enter Post Name"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_post_name"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Post Name"
+                android:inputType="text"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_post1"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginTop="30dp"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Total No of Post"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_no_of_post"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of post"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Post Filled"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_post_filled"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of post Filled"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Post Vacant"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_post_vacant"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter Post vacant"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Class"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/edit_class"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:entries="@array/class_type"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </Spinner>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_post2"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:visibility="gone"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Total No of Post"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <EditText
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of post"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Post Filled"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </TextView>
+
+                <EditText
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of post Filled"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Post Vacant"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </TextView>
+
+                <EditText
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter Post vacant"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Class"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"></TextView>
+
+                <Spinner
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:entries="@array/class_type"
+                    tools:listitem="">
+
+                </Spinner>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_post3"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Total No of Post"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black">
+
+                </TextView>
+                <EditText
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of post"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Post Filled"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <EditText
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of post Filled"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Post Vacant"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <EditText
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter Post vacant"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Class"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/spin_class"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:entries="@array/class_type"
+                    tools:listitem="">
+                </Spinner>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/purple"
+            android:gravity="center_vertical"
+            android:text="  INFRASTRUCTURE "
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Enter Establishment Year"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_estb_year"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Year"
+                android:inputType="number"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Type of Building"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </TextView>
+
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spin_building_type"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:entries="@array/building_type"
+                tools:listitem="">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_building_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Building Type"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_building_type"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Building Type"
+                android:inputType="number"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Total Area"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_area"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Total Area"
+                android:inputType="number"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Total Rooms Available"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text=":"
+                android:textSize="18sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_rooms_avaialable"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Total No of Rooms"
+                android:inputType="text"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="152dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:text="Availibility of Bathroom"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/availibility_of_bathroom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:checked="false"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/availibilty_yes_in_use"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Yes/ In Use"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/availibility_yes_not_in_use"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Yes/ Not in Use"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/availibility_No"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="No"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="121dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:text="Availibility of Furniture"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/availibility_of_furniture"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:checked="false"
+                android:orientation="vertical"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/availibility_sufficient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Sufficient"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/availibility_insufficient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Insufficient"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:text="Availibility of Internet"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/availibility_of_Internet"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:checked="false"
+                android:orientation="vertical"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:weightSum="4">
+
+                <RadioButton
+                    android:id="@+id/availibilty_yes_in_use2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Yes/ In Use"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/availibility_yes_not_in_use2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Yes/ Not in Use"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/availibility_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="No"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/availibility_not_applicable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:paddingRight="24dp"
+                    android:text="Not Applicable"
+                    android:textColor="#000000"
+                    android:textSize="16sp">
+
+                </RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:padding="5dp"-->
+<!--            android:background="@color/cardview_shadow_end_color"-->
+<!--            android:layout_height="310dp"-->
+<!--            android:gravity="center">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/tv_photo"-->
+<!--                android:layout_height="300dp"-->
+<!--                android:src="@drawable/background_image"-->
+<!--                android:layout_width="300dp"/>-->
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash;&ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="10dp"-->
+<!--            android:weightSum="2">-->
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Capture photo using camera"-->
+<!--                android:background="#07550A"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:id="@+id/capture_photo"-->
+<!--                android:layout_weight="1">-->
+<!--            </Button>-->
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/ll_for_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="For Hospital"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Type of Dispensary"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </TextView>
+
+
+                <Spinner
+                    android:id="@+id/spin_dispensary_type"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:entries="@array/dispensary_type"
+                    tools:listitem="">
+                </Spinner>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_for_medical_college"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="For Medical College"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Type of Course"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_course_name"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter Course Name"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </EditText>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="No of Seat"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_no_of_seats"
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="Enter no of Seat"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:layout_height="310dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/tv_photo"
+            android:layout_height="300dp"
+            android:src="@drawable/background_image"
+            android:layout_width="300dp"/>
+    </RelativeLayout>
+
+    <!---->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="2">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Capture photo using camera"
+            android:background="#07550A"
+            android:textColor="@color/white"
+            android:id="@+id/capture_photo"
+            android:layout_weight="1">
+        </Button>
+    </LinearLayout>
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="SUBMIT"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/black"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            style="@style/AppTheme.RoundedCornerMaterialButton"
+            android:layout_marginTop="30dp">
+        </Button>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1054854720617",
+    "firebase_url": "https://ayushgis.firebaseio.com",
+    "project_id": "ayushgis",
+    "storage_bucket": "ayushgis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054854720617:android:f0a6fd6efe4731175906f8",
+        "android_client_info": {
+          "package_name": "com.example.ayush_gis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054854720617-sf190l43tuce6jp6f2b5dtgbqkcn6cor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ayush_gis",
+            "certificate_hash": "fbf81aa69ce3d27cc81d0fa40f265979415e3349"
+          }
+        },
+        {
+          "client_id": "1054854720617-0ks7vm83g9rbddh8kmtnidv86e20a44t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLxfnSY6r2FnBEBRSLfYbqpeoxbUp2y5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054854720617-0ks7vm83g9rbddh8kmtnidv86e20a44t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

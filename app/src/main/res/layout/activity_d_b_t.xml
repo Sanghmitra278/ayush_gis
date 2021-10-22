@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".DBTActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#009688"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#009688">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="0dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="#009688"
+                android:text="  DBT "
+                android:textColor="#ffffff"
+                android:textSize="24sp">
+            </TextView>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_scrollview"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="true"
+                android:scrollbarFadeDuration="@android:integer/config_mediumAnimTime"
+                android:id="@+id/sv_container">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/opd_ipd_choose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/opd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_blue"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="OPD"
+                            android:textSize="22sp" />
+
+                        <View
+                            android:id="@+id/border1"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#0000FF"
+                            android:visibility="visible" />
+
+                        <RadioButton
+                            android:id="@+id/ipd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_blue"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="IPD"
+                            android:textSize="22sp" />
+                    </RadioGroup>
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:weightSum="4"
+                       android:orientation="horizontal">
+
+                       <LinearLayout
+                           android:layout_width="204dp"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="2">
+
+                           <RadioGroup
+                               android:id="@+id/opd_choose"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_margin="0dp"
+                               android:layout_marginTop="0dp"
+                               android:layout_weight="2"
+                               android:background="@drawable/round_border"
+                               android:gravity="left"
+                               android:orientation="horizontal"
+                               android:visibility="gone">
+
+                               <RadioButton
+                                   android:id="@+id/opd_new"
+                                   android:layout_width="66dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight="1"
+                                   android:background="@drawable/bg_blue"
+                                   android:button="@android:color/transparent"
+                                   android:gravity="center"
+                                   android:paddingTop="5dp"
+                                   android:paddingBottom="5dp"
+                                   android:singleLine="true"
+                                   android:text="NEW"
+                                   android:textSize="22sp" />
+
+                               <View
+                                   android:id="@+id/border2"
+                                   android:layout_width="1dp"
+                                   android:layout_height="match_parent"
+                                   android:background="#0000FF"
+                                   android:visibility="visible" />
+
+                               <RadioButton
+                                   android:id="@+id/opd_old"
+                                   android:layout_width="67dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight="1"
+                                   android:background="@drawable/bg_blue"
+                                   android:button="@android:color/transparent"
+                                   android:gravity="center"
+                                   android:paddingTop="5dp"
+                                   android:paddingBottom="5dp"
+                                   android:singleLine="true"
+                                   android:text="OLD"
+                                   android:textSize="22sp" />
+                           </RadioGroup>
+                       </LinearLayout>
+                       <View
+                           android:id="@+id/border4"
+                           android:layout_width="0dp"
+                           android:layout_weight="0"
+                           android:layout_height="match_parent"
+                           android:background="#ffffff"
+                           android:visibility="visible" />
+
+                       <LinearLayout
+                           android:layout_width="196dp"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="2">
+                    <RadioGroup
+                        android:id="@+id/ipd_choose"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/round_border"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <RadioButton
+                            android:id="@+id/ipd_new"
+                            android:layout_width="171dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_blue"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="NEW"
+                            android:textSize="22sp" />
+
+                        <View
+                            android:id="@+id/border3"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#0000FF"
+                            android:visibility="visible" />
+
+                        <RadioButton
+                            android:id="@+id/ipd_old"
+                            android:layout_width="167dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_blue"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="OLD"
+                            android:textSize="22sp" />
+
+                    </RadioGroup>
+                       </LinearLayout>
+                   </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_opd_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#638BC34A"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/green"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:text="OPD "
+                            android:textColor="@color/white"
+                            android:textSize="25sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/purple"
+                            android:fontFamily="serif"
+                            android:gravity="center_vertical"
+                            android:text="  Total No. of Patients (New) "
+                            android:textColor="@color/black"
+                            android:textSize="20sp">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Male"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/edit_male_opd_new"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Female"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/edit_female_opd_new"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No. of Adhaar Patient Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/opd_new_edit_adhar_patient"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No of Mobile No. Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/opd_new_edit_mob_no"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Total Alloted"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/opd_new_edit_total"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_opd_old"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#524AC3B1"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/green"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:text="OPD "
+                            android:textColor="@color/white"
+                            android:textSize="25sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/purple"
+                            android:fontFamily="serif"
+                            android:gravity="center_vertical"
+                            android:text="  Total No. of Patients (Old) "
+                            android:textColor="@color/black"
+                            android:textSize="20sp">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Male"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/edit_male_opd_old"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Female"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/edit_female_opd_old"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No. of Adhaar Patient Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/opd_old_edit_adhar_patient"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No of Mobile No. Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/opd_old_edit_mob_no"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Total Alloted"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/opd_old_edit_total"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_ipd_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#3600BCD4"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/green"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:text="IPD "
+                            android:textColor="@color/white"
+                            android:textSize="25sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/purple"
+                            android:fontFamily="serif"
+                            android:gravity="center_vertical"
+                            android:text="  Total No. of Patients (New) "
+                            android:textColor="@color/black"
+                            android:textSize="20sp">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Male"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/edit_male_ipd_new"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Female"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/edit_female_ipd_new"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No. of Adhaar Patient Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/ipd_new_edit_adhar_patient"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No of Mobile No. Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/ipd_new_edit_mob_no"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Total Alloted"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/ipd_new_edit_total"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_ipd_old"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#327BBF2B"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/green"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:text="IPD "
+                            android:textColor="@color/white"
+                            android:textSize="25sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="0dp"
+                            android:background="@drawable/purple"
+                            android:fontFamily="serif"
+                            android:gravity="center_vertical"
+                            android:text="  Total No. of Patients (Old) "
+                            android:textColor="@color/black"
+                            android:textSize="20sp">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Male"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"></TextView>
+
+                            <EditText
+                                android:id="@+id/edit_male_ipd_old"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp"></EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Female"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"></TextView>
+
+                            <EditText
+                                android:id="@+id/edit_female_ipd_old"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp"></EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No. of Adhaar Patient Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/ipd_old_edit_adhar_patient"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="No of Mobile No. Seeded"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/ipd_old_edit_mob_no"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+
+                            <TextView
+                                android:layout_width="148dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="Total Alloted"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:text=":"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/ipd_old_edit_total"
+                                android:layout_width="174dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint=""
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/submit_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/teal"
+                        android:text="SUBMIT"
+                        android:textColor="@color/white"
+                        android:textSize="18sp">
+
+                    </Button>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

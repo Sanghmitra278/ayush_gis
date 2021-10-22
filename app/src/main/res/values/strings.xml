@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">Ayush GIS</string>
+    <string name="title_activity_maps">Ayush-GIS</string>
+
+    <string-array name="ayush_type">
+        <item>--Select Stream--</item>
+    </string-array>
+
+    <string-array name="office_name">
+        <item>--Office Name--</item>
+    </string-array>
+
+    <string-array name="office_type">
+        <item>--Select--</item>
+        <item> DAUO Office </item>
+        <item> Dispensary </item>
+        <item> Medical College </item>
+        <item> Pharmacy </item>
+        <item> Directorate </item>
+    </string-array>
+    <string-array name="ayur_unani">
+        <item> --Select-- </item>
+        <item> --Ayurved-- </item>
+        <item> --Unani-- </item>
+
+    </string-array>
+    <string-array name="district">
+        <item>-Select District-</item>
+    </string-array>
+
+    <string-array name="block">
+        <item>--Select--</item>
+    </string-array>
+
+    <string-array name="vidhansabha">
+        <item>--Select--</item>
+    </string-array>
+
+    <string-array name="post_name">
+        <item>--Select--</item>
+        <item> Post 1 </item>
+        <item> Post 2 </item>
+        <item> Post 3 </item>
+    </string-array>
+
+    <string-array name="no_of_post">
+        <item>--Select--</item>
+    </string-array>
+
+    <string-array name="no_of_post_filled">
+        <item>--Select--</item>
+    </string-array>
+
+
+    <string-array name="no_of_post_vacant">
+        <item>--Select--</item>
+    </string-array>
+
+    <string-array name="class_type">
+        <item>--Select--</item>
+        <item> Class1 </item>
+        <item> Class2 </item>
+        <item> Class3 </item>
+        <item> Class4 </item>
+    </string-array>
+
+
+    <string-array name="building_type">
+        <item>--Select--</item>
+        <item> Government Owned </item>
+        <item> Rented </item>
+        <item> Donated </item>
+        <item> Any Other </item>
+    </string-array>
+
+    <string-array name="dispensary_type">
+        <item>--Select--</item>
+        <item> 4 Bed </item>
+        <item> 15 Bed </item>
+        <item> 25 Bed </item>
+        <item> OPD Only </item>
+    </string-array>
+
+    <string-array name="name_values">
+        <item>--Select--</item>
+        <item> Name1 </item>
+        <item> Name2 </item>
+        <item> Name3 </item>
+        <item> Name4 </item>
+    </string-array>
+
+    <string-array name="opd_type">
+        <item>--Select type--</item>
+        <item> New </item>
+        <item> Old </item>
+
+    </string-array>
+
+    <string-array name="ipd_type">
+        <item>--Select type--</item>
+        <item> New </item>
+        <item> Old </item>
+    </string-array>
+
+    <string-array name="department_type">
+        <item>--Select type Of Department--</item>
+        <item> OPD </item>
+        <item> IPD </item>
+    </string-array>
+
+</resources>
